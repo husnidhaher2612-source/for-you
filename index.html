@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إلك 💜</title>
+<meta name="theme-color" content="#1a0b2e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#1a0b2e; --bg2:#3a1670; --ink:#f6f0ff; --muted:#c9b8ec;
+  --lav:#c8b6ff; --vio:#9d6bff; --pink:#ff8fd8; --gold:#f2c86b;
+  --card:rgba(255,255,255,.07); --line:rgba(200,182,255,.28);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%}
+body{
+  font-family:"Tajawal",system-ui,sans-serif; color:var(--ink);
+  background:radial-gradient(120% 80% at 80% 0%,#5b2a9e 0%,transparent 55%),
+             radial-gradient(90% 60% at 0% 100%,#7a2c8f 0%,transparent 60%),
+             linear-gradient(160deg,var(--bg1),var(--bg2));
+  background-attachment:fixed; min-height:100vh; overflow-x:hidden;
+}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.0;animation:tw 4s infinite}
+@keyframes tw{50%{opacity:.8}}
+main{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:20px 16px 120px}
+h1,h2{font-family:"Baloo Bhaijaan 2",sans-serif;margin:0}
+h1{font-size:2.1rem;line-height:1.2}
+h2{font-size:1.45rem;line-height:1.35;margin:6px 0 4px}
+.hint{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;font-size:.9rem;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+.bar{height:8px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}
+.bar b{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--vio));border-radius:9px;transition:width .4s}
+.taunt{font-size:.9rem;color:var(--lav);margin:8px 0 18px;min-height:1.3em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 16px;backdrop-filter:blur(6px);animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opt{font:inherit;font-size:1.02rem;color:var(--ink);background:rgba(255,255,255,.05);border:1.5px solid var(--line);
+  border-radius:16px;padding:14px 10px;cursor:pointer;transition:transform .12s,background .2s,border-color .2s;text-align:center}
+.opt:active{transform:scale(.96)}
+.opt.on{background:linear-gradient(135deg,var(--vio),#c77dff);border-color:transparent;box-shadow:0 6px 22px rgba(157,107,255,.45)}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(50px,1fr));gap:12px}
+.s{border:none;cursor:pointer;aspect-ratio:1;border-radius:50%;position:relative;box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);transition:transform .15s}
+.s.on{transform:scale(1.1);box-shadow:0 0 0 3px var(--bg1),0 0 0 6px var(--gold)}
+.s span{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:.72rem;color:var(--muted);white-space:nowrap}
+.sw{row-gap:28px;padding-bottom:16px}
+input,textarea{width:100%;font:inherit;font-size:1.05rem;color:var(--ink);background:rgba(0,0,0,.22);border:1.5px solid var(--line);
+  border-radius:14px;padding:13px 14px;outline:none;margin-top:10px}
+input:focus,textarea:focus{border-color:var(--pink)}
+textarea{min-height:110px;resize:vertical}
+label{display:block;font-size:.9rem;color:var(--muted);margin-top:12px}
+label+input{margin-top:6px}
+.nav{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.btn{font:inherit;font-family:"Baloo Bhaijaan 2",sans-serif;font-size:1.15rem;font-weight:700;border:none;border-radius:16px;padding:13px 26px;cursor:pointer}
+.go{background:linear-gradient(135deg,var(--pink),var(--vio));color:#fff;box-shadow:0 8px 24px rgba(255,143,216,.3);flex:1}
+.go:disabled{opacity:.4;box-shadow:none}
+.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+.flee{font:inherit;font-family:"Baloo Bhaijaan 2",sans-serif;font-size:1.1rem;font-weight:700;background:#3d1f6b;color:var(--ink);box-shadow:0 6px 18px rgba(0,0,0,.3);
+  border:1.5px solid var(--line);border-radius:16px;padding:12px 26px;cursor:pointer;transition:left .18s ease,top .18s ease;z-index:50;white-space:nowrap}
+.toast{color:var(--gold);font-weight:700;margin-top:12px;min-height:1.2em;text-align:center}
+.center{text-align:center}
+.big{font-size:3.4rem;margin:8px 0}
+.err{color:var(--pink)}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<main id="app"></main>
+<script>
+// Paste the Apps Script web-app URL here (see apps-script/SETUP.md). Empty = test mode, logs to console.
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyW-zQmKe9q0F5JkPlbJirZu3D-cjpqEB-RlpudOvbobD_ud6nwe3Klrvzk7uUzAqDU/exec';
+
+const COLORS = [['بنفسجي','#7b3fe4'],['لافندر','#c8b6ff'],['ليلكي','#b57edc'],['زهري','#f4a6c1'],['وردي فاتح','#ffd6e0'],
+  ['نبيذي','#7a1f3d'],['أحمر','#d62839'],['برتقالي','#f28c28'],['أصفر','#f6d55c'],['ذهبي','#c9a227'],['زيتي','#6b7a3a'],
+  ['أخضر غامق','#1f4d3a'],['نعناعي','#a8e6cf'],['سماوي','#8ecae6'],['أزرق','#2a6fdb'],['كحلي','#1d2b53'],['بيج','#e9dcc9'],
+  ['بني','#7b5b3a'],['أسود','#111111'],['أبيض','#fafafa'],['رمادي','#9aa0a6']];
+
+// t: swatch | pick | multi | fields | text.  other: adds a free-text option.  opt: optional field indexes.
+const Q = [
+  {ch:'ألواني', t:'swatch', n:3, q:'اختاري ٣ ألوان بتحبي تشوفيهم مع بعض', h:'كبسي على ٣ بالضبط 🎨'},
+  {t:'pick', q:'أي جو بيشبهك أكثر؟', o:['🌧️ شتا ومطر','🌸 ربيع وورد','🌊 صيف وبحر','🍂 خريف وورق شجر'], other:1},
+  {t:'pick', q:'الصبح ولا الليل؟', o:['☀️ الصبح','🌙 الليل']},
+  {ch:'عالمي الصغير', t:'pick', q:'أي حيوان أو طير بيشبهك؟', o:['🐱 قطة','🦋 فراشة','🦢 بجعة','🦉 بومة','🦊 ثعلب','🐬 دلفين','🦌 غزال','🐎 حصان'], other:1},
+  {t:'pick', q:'شو وردتك؟', o:['🌹 جوري','🌷 توليب','🌻 دوار الشمس','🪻 لافندر','🤍 ياسمين','🌸 زهر الكرز','💮 زنبق'], other:1},
+  {t:'multi', n:2, q:'أي رمز دايمًا بلفت نظرك؟', h:'اختاري لحد ٢', o:['🌙 قمر','⭐ نجمة','🦋 فراشة','🌊 موجة','🗝️ مفتاح','👁️ عين','♾️ لانهاية','🪐 كوكب','🎀 فيونكة','🔥 نار'], other:1},
+  {t:'fields', q:'لو عندك عالمين بتحبيهم كثير، شو هم؟', h:'هواية، شغف، دراسة، شغل… أي إشي', f:['العالم الأول','العالم الثاني']},
+  {ch:'ذوقي', t:'pick', q:'ستايلك أقرب لإيش؟', o:['🎀 ناعم وكلاسيكي','🛹 ستريت وكاجوال','🏃‍♀️ رياضي','📻 فينتج','🖤 بسيط ومينيمال'], other:1},
+  {t:'pick', q:'اللبس بتحبيه…', o:['☁️ واسع ومريح','✨ مضبوط على الجسم']},
+  {t:'text', q:'فيلم أو مسلسل أو كرتون ما بتملي منه؟'},
+  {t:'fields', q:'أغنية بتحبيها كثير 🎶', f:['اسم الأغنية','سطر منها بتحبيه'], opt:[1]},
+  {ch:'أنا', t:'fields', q:'٣ كلمات بتوصفك', f:['١','٢','٣']},
+  {t:'text', long:1, q:'شو جانب منك قليل ناس بعرفوه؟'},
+  {t:'text', long:1, q:'ريحة أو ذكرى بترجعك للطفولة فورًا؟'},
+  {t:'text', long:1, q:'لو قابلتي نفسك الصغيرة، شو بتحكيلها؟'},
+  {ch:'تفاصيل', t:'fields', q:'رقمك المفضل؟', h:'وإذا إله قصة احكيها 👀', f:['الرقم','إله معنى؟'], opt:[1], num:[0]},
+  {t:'text', q:'شو كلمتك المفضلة؟'},
+  {t:'text', q:'لو حياتك فيلم، شو عنوانه؟ 🎬'},
+  {t:'pick', q:'وين بتحلمي تكوني هلأ؟', o:['🗼 باريس','🏔️ جبال وثلج','🌴 جزيرة استوائية','🏯 اليابان','🏜️ صحراء ونجوم','🏡 بيت صغير بالريف'], other:1},
+  {ch:'إحنا', t:'text', long:1, q:'شو التصرف الصغير اللي بخليكِ تحسي إنك محبوبة؟'},
+  {t:'pick', q:'لو الحب رمز واحد، شو بيكون؟', o:['❤️ قلب','🗝️ مفتاح','🌙 قمر','🌹 وردة','♾️ لانهاية','🧵 خيط أحمر','🏠 بيت'], other:1},
+  {t:'text', long:1, q:'آخر واحد 🥺 لو بدك ترسمي روحك بدون ما ترسمي وجهك، شو بترسمي؟'},
+];
+{let c; Q.forEach((x,i)=>{x.id=i+1; c=x.ch||c; x.ch=c;});}
+
+const OTHER = '✍️ إشي تاني';
+const TAUNTS = ['لسا بدري 😌','ماشية منيح 👏','نص الطريق! ولا تفكري تتخطي 😏','قربنا والله 🤏','آخر واحد، بوعدك 🤞'];
+const FLEE_TXT = ['تخطي','لا لا 😝','مش هيك 😂','ولا تحاولي 😏','ما في أمل 🙃','الزر هاد للزينة بس','جربي كمان… لا عن جد لا 😂',
+  'استسلمي 💜','ما في تخطي بهالموقع','خلص جاوبي 🥲','لسا بتحاولي؟ 🙄','أنا أسرع منك 🏃‍♂️'];
+
+let S = load();
+const $ = s => document.querySelector(s);
+const app = $('#app');
+
+function load(){ try{ return JSON.parse(localStorage.getItem('fy')) || {i:-1,a:{},flee:0}; }catch(e){ return {i:-1,a:{},flee:0}; } }
+function save(){ try{ localStorage.setItem('fy', JSON.stringify(S)); }catch(e){} }
+
+function send(body){
+  if(!ENDPOINT){ console.log('[test-mode send]', body); return; }
+  fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify(body)}).catch(()=>{});
+}
+
+// Moves el to a random on-screen spot away from where the finger/mouse is. Returns attempt count.
+function dodge(el, ev){
+  const r = el.getBoundingClientRect(), W = innerWidth, H = innerHeight;
+  const px = ev && ev.clientX != null ? ev.clientX : (ev && ev.touches ? ev.touches[0].clientX : r.left);
+  const py = ev && ev.clientY != null ? ev.clientY : (ev && ev.touches ? ev.touches[0].clientY : r.top);
+  let x, y, k = 0;
+  do { x = 12 + Math.random()*Math.max(0, W - r.width - 24); y = 70 + Math.random()*Math.max(0, H - r.height - 140); k++; }
+  while (k < 30 && Math.hypot(x + r.width/2 - px, y + r.height/2 - py) < 160);
+  // .card's backdrop-filter would make position:fixed card-relative, so the button escapes to <body>
+  if (el.parentNode !== document.body){ el.style.position='fixed'; el.style.left=r.left+'px'; el.style.top=r.top+'px'; document.body.appendChild(el); el.offsetWidth; }
+  el.style.left = x+'px'; el.style.top = y+'px';
+}
+function makeFlee(el, onTry){
+  // text changes first, so dodge() measures the new width and keeps the button fully on screen
+  const f = ev => { ev.preventDefault(); ev.stopPropagation(); onTry && onTry(); dodge(el, ev); };
+  el.addEventListener('pointerenter', e => { if(e.pointerType==='mouse') f(e); });
+  el.addEventListener('pointerdown', f);
+  el.addEventListener('touchstart', f, {passive:false});
+  el.addEventListener('click', f);
+}
+
+function intro(){
+  app.innerHTML = `<div class="card center" style="margin-top:12vh">
+    <div class="big">💜</div>
+    <h1>عندي إلك لعبة صغيرة</h1>
+    <p class="hint" style="margin-top:10px">بدي أعرفك أكثر… ٢٢ سؤال بس، أغلبهم كبسة وحدة.<br>جاوبي من قلبك، ما في جواب غلط 😌</p>
+    <div class="nav"><button class="btn go" id="start">يلا نبلش ✨</button></div>
+  </div>`;
+  $('#start').onclick = () => { S.i = 0; save(); render(); };
+}
+
+function render(){
+  document.querySelectorAll('body > .flee').forEach(e => e.remove());
+  if (S.done) return thanks();
+  if (S.i < 0) return intro();
+  if (S.i >= Q.length) return confirmEnd();
+  const q = Q[S.i], a = S.a[q.id], pct = S.i / Q.length;
+  const taunt = S.i === Q.length-1 ? TAUNTS[4] : TAUNTS[Math.min(3, Math.floor(pct*4))];
+  let body = '';
+  if (q.t === 'swatch') body = `<div class="sw">${COLORS.map(([n,c])=>`<button class="s" style="background:${c}" data-v="${n}"><span>${n}</span></button>`).join('')}</div>`;
+  if (q.t === 'pick' || q.t === 'multi') body = `<div class="opts">${q.o.concat(q.other?[OTHER]:[]).map(o=>`<button class="opt" data-v="${o}">${o}</button>`).join('')}</div>
+    ${q.other ? `<input id="oth" placeholder="اكتبي هون…" style="display:none">` : ''}`;
+  if (q.t === 'fields') body = q.f.map((f,k)=>`<label>${f}${(q.opt||[]).includes(k)?' (اختياري)':''}</label><input data-k="${k}" ${(q.num||[]).includes(k)?'inputmode="numeric"':''}>`).join('');
+  if (q.t === 'text') body = q.long ? `<textarea id="tx" placeholder="احكي براحتك…"></textarea>` : `<input id="tx" placeholder="اكتبي هون…">`;
+
+  app.innerHTML = `
+    <div class="top"><span class="chip">${q.ch}</span><span>${S.i+1} / ${Q.length}</span></div>
+    <div class="bar"><b style="width:${(pct*100).toFixed(1)}%"></b></div>
+    <div class="taunt">${taunt}</div>
+    <div class="card">
+      <h2>${q.q}</h2>${q.h?`<p class="hint">${q.h}</p>`:'<p class="hint"></p>'}
+      ${body}
+      <div class="toast" id="toast"></div>
+      <div class="nav">
+        ${S.i>0?'<button class="btn ghost" id="back">رجوع</button>':''}
+        <button class="btn go" id="next">${S.i===Q.length-1?'خلصت 💜':'التالي'}</button>
+      </div>
+      <div class="nav"><button class="flee" id="skip">${FLEE_TXT[0]}</button></div>
+    </div>`;
+
+  // restore + wire inputs
+  const sel = new Set(a && a.sel || []);
+  const oth = $('#oth');
+  const sync = () => {
+    app.querySelectorAll('[data-v]').forEach(b => b.classList.toggle('on', sel.has(b.dataset.v)));
+    if (oth) oth.style.display = sel.has(OTHER) ? 'block' : 'none';
+    $('#next').disabled = !valid();
+  };
+  app.querySelectorAll('[data-v]').forEach(b => b.onclick = () => {
+    const v = b.dataset.v;
+    if (q.t === 'pick'){ sel.clear(); sel.add(v); }
+    else if (sel.has(v)) sel.delete(v);
+    else if (sel.size < q.n) sel.add(v);
+    else { $('#toast').textContent = q.t==='swatch' ? 'بس ٣ يا ذكية 😄' : `بس ${q.n} 😄`; return; }
+    $('#toast').textContent = '';
+    sync();
+    if (sel.has(OTHER)) oth.focus();
+  });
+  if (oth){ oth.value = a && a.oth || ''; oth.oninput = sync; }
+  const ins = [...app.querySelectorAll('input[data-k]')];
+  ins.forEach((el,k) => { el.value = a && a.f ? a.f[k] || '' : ''; el.oninput = sync; });
+  const tx = $('#tx'); if (tx){ tx.value = a && a.tx || ''; tx.oninput = () => { tease = false; sync(); }; }
+
+  function valid(){
+    if (q.t === 'swatch') return sel.size === q.n;
+    if (q.t === 'pick' || q.t === 'multi') return sel.size > 0 && (!sel.has(OTHER) || oth.value.trim());
+    if (q.t === 'fields') return ins.every((el,k) => (q.opt||[]).includes(k) || el.value.trim());
+    return tx.value.trim().length > 0;
+  }
+  function collect(){
+    if (q.t === 'fields') return {f: ins.map(el => el.value.trim())};
+    if (q.t === 'text') return {tx: tx.value.trim()};
+    return {sel:[...sel], oth: oth ? oth.value.trim() : ''};
+  }
+  function text(v){
+    if (v.tx != null) return v.tx;
+    if (v.f) return q.f.map((f,k) => v.f[k] ? `${f}: ${v.f[k]}` : '').filter(Boolean).join(' | ');
+    const named = v.sel.map(s => s === OTHER ? v.oth : s);
+    if (q.t === 'swatch') return named.map(n => `${n} (${COLORS.find(c=>c[0]===n)[1]})`).join('، ');
+    return named.join('، ');
+  }
+
+  let tease = false;
+  $('#next').onclick = () => {
+    if (!valid()) return;
+    if (q.t === 'text' && tx.value.trim().length < 3 && !tease){ tease = true; $('#toast').textContent = 'بس هيك؟ 🤨 زيدي شوي'; return; }
+    const v = collect(); S.a[q.id] = v; S.i++; save();
+    send({id:q.id, chapter:q.ch, question:q.q, answer:text(v)});
+    scrollTo(0,0); render();
+  };
+  if ($('#back')) $('#back').onclick = () => { S.i--; save(); render(); };
+  const sk = $('#skip');
+  let tries = 0;  // every question starts as a plain "تخطي"; each try shows the next hopeless line, looping
+  makeFlee(sk, () => { tries++; sk.textContent = FLEE_TXT[1 + (tries - 1) % (FLEE_TXT.length - 1)]; });
+  sync();
+}
+
+function confirmEnd(){
+  app.innerHTML = `<div class="card center" style="margin-top:12vh">
+    <div class="big">🥹</div><h1>خلصتي؟</h1>
+    <p class="hint" style="margin-top:10px">بعد هيك ما في رجعة 😌</p>
+    <div class="nav"><button class="btn go" id="yes">آه خلصت 💜</button></div>
+    <div class="nav" style="justify-content:center"><button class="flee" id="no">لا، بدي أراجع</button></div>
+    <div class="toast" id="toast"></div>
+  </div>`;
+  let n = 0; const no = $('#no');
+  makeFlee(no, () => {
+    if (++n < 5) return;
+    no.textContent = 'ماشي تفضلي 🙄'; no.replaceWith(no.cloneNode(true));
+    const b = $('#no'); b.onclick = () => { S.i = Q.length-1; save(); render(); };
+  });
+  $('#yes').onclick = () => { S.done = true; save(); send({done:true}); render(); };
+}
+
+function thanks(){
+  app.innerHTML = `<div class="card center" style="margin-top:14vh">
+    <div class="big">💌</div><h1>وصلني كلشي</h1>
+    <p class="hint" style="margin-top:10px">شكرًا إنك جاوبتي من قلبك…<br>استني، في إشي جاي إلك 🤫💜</p>
+  </div>`;
+}
+
+// background twinkles
+for (let k = 0; k < 40; k++){ const s = document.createElement('i'); s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*4}s`; $('#stars').appendChild(s); }
+render();
+</script>
+</body>
+</html>
